@@ -37,4 +37,4 @@ app
         
         res.status(200).send();
     })
-    .listen(3000)
+    .listen(process.env.PORT || 5000)
