@@ -18,7 +18,7 @@
     "node": "14.x"
   },
   "scripts": {
-    "deploy": "git push heroku master",
+    "deploy": "git push heroku main",
     "dev": "nodemon ./index.js"
   }
 }
