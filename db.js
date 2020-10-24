@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 
 const config = {
-  apiKey: '',
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: 'meowmaster-da607.firebaseapp.com',
   databaseURL: 'https://meowmaster-da607.firebaseio.com',
   projectId: 'meowmaster-da607',
