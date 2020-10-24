@@ -14,7 +14,11 @@
     "firebase": "^7.24.0",
     "nodemon": "^2.0.6"
   },
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
+    "deploy": "git push heroku master",
     "dev": "nodemon ./index.js"
   }
 }
