@@ -292,3 +292,4 @@ Lambda-Functions/.coverage
 */__pycache__/*
 inputzip_cide.zip
 
+    node_modules
