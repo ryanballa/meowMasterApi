@@ -1,15 +1,9 @@
-import firebase from 'firebase';
+import pkg from '@supabase/supabase-js';
+const { createClient } = pkg;
 
-const config = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: 'meowmaster-da607.firebaseapp.com',
-  databaseURL: 'https://meowmaster-da607.firebaseio.com',
-  projectId: 'meowmaster-da607',
-  storageBucket: 'meowmaster-da607.appspot.com',
-  messagingSenderId: '274824885515',
-  appId: '1:274824885515:web:b9f6ebb4a7e20c729d5e0e',
-  measurementId: 'G-RSD1RJ0FWM',
-};
+// Initialize 
+const supabaseUrl = 'https://eilfpkgdgcqwxfbzvhiq.supabase.co';
+const supabaseKey = process.env.SUPABASE_API_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
-firebase.initializeApp(config);
-export default firebase;
+export default supabase;

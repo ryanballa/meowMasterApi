@@ -8,10 +8,13 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@supabase/supabase-js": "^1.0.2",
     "@tinyhttp/app": "^0.5.5",
     "@tinyhttp/logger": "^0.5.5",
     "body-parser": "^1.19.0",
     "firebase": "^7.24.0",
+    "googleapis": "^64.0.0",
+    "moment": "^2.29.1",
     "nodemon": "^2.0.6"
   },
   "engines": {
