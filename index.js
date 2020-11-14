@@ -26,15 +26,15 @@ app
                 .select('*')
                 .order('completionDate', { ascending: false })
                 .limit(1);
-            if (!moment(lastCleaning[0].completionDate).isBefore(moment().add(2, 'hours'))) {
+            if (moment(lastCleaning[0].completionDate).isBefore(moment().add(2, 'hours'))) {
+                res.status(401).send();
+            } else {
                 await supabase
                     .from('cleanings')
                     .insert([
                         { completionDate: date, ...cleaning }
                     ])
                 res.status(201).send();
-            } else {
-                res.status(401).send();
             }
         }
     })
