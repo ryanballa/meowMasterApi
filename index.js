@@ -21,21 +21,12 @@ app
         } else {
             const cleaning = req.body;
             const date = moment().format('YYYY-MM-DDTHH:mm:ss')
-            const { data: lastCleaning }= await supabase
+            await supabase
                 .from('cleanings')
-                .select('*')
-                .order('completionDate', { ascending: false })
-                .limit(1);
-            if (lastCleaning && moment(lastCleaning[0].completionDate).isAfter(moment().add(2, 'hours'))) {
-                res.status(401).send();
-            } else {
-                await supabase
-                    .from('cleanings')
-                    .insert([
-                        { completionDate: date, ...cleaning }
-                    ])
-                res.status(201).send();
-            }
+                .insert([
+                    { completionDate: date, ...cleaning }
+                ])
+            res.status(201).send();
         }
     })
     .get('/cleanings', async (req, res) => {
